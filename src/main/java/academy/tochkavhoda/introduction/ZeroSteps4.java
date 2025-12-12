@@ -182,4 +182,73 @@ public class ZeroSteps4 {
         return answer;
     }
 
+    public int[] toLinearByColumn(int[][] matrix) {
+        int countsOfElements = 0;
+        for (int i = 0; i < matrix.length; i++)
+            countsOfElements += matrix[i].length;
+
+        int[] answer = new int[countsOfElements];
+        int counter = 0;
+        while (counter < countsOfElements) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    answer[counter] = matrix[j][i];
+                    counter += 1;
+                }
+            }
+        }
+        return answer;
+    }
+
+    public int[] toLinearByRowUpperTriangle(int[][] matrix) {
+        int countsOfElements = 0;
+        for (int i = 0; i < matrix.length; i++)
+            countsOfElements += matrix[i].length - i;
+
+        int[] answer = new int[countsOfElements];
+        int counter = 0;
+        while (counter < countsOfElements) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length - i; j++) {
+                    answer[counter] = matrix[i][j+i];
+                    counter += 1;
+                }
+            }
+        }
+        return answer;
+    }   // 1 12 3 26 17 49
+        //
+        // 1 12 3
+        // 4 26 17
+        // 7 8 49
+
+    public int sumUntilNotFoundInRow(int[][] matrix, int barrier) {
+        int answer = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == barrier)
+                    break;
+                else
+                    answer += matrix[i][j];
+            }
+        }
+        return answer;
+    }
+
+    public int sumUntilNotFound(int[][] matrix, int barrier) {
+        int answer = 0;
+        int stop = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            if (stop == barrier)
+                break;
+            for (int j = 0; j < matrix[i].length; j++) {
+                stop = matrix[i][j];
+                if (stop == barrier)
+                    break;
+                else
+                    answer += matrix[i][j];
+            }
+        }
+        return answer;
+    }
 }
