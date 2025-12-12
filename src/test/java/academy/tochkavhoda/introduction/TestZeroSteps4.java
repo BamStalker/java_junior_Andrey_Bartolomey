@@ -217,5 +217,5 @@ public class TestZeroSteps4 {
         assertEquals(94,zeroSteps4.sumUntilNotFound(matrix, 100));
         assertEquals(8,zeroSteps4.sumUntilNotFound(matrix, 12));
         assertEquals(23,zeroSteps4.sumUntilNotFound(matrix, 4));
-    }*/
+    }
 }
