@@ -181,7 +181,7 @@ public class TestZeroSteps4 {
         int[] result = {10, 1, 12, 3, 4, 26, 7, 8, 49};
         int[] scan = zeroSteps4.toLinearByRow(matrix);
         assertArrayEquals(result, scan);
-    }/*
+    }
 
     @Test
     public void testToLinearByColumn() {
@@ -196,7 +196,7 @@ public class TestZeroSteps4 {
     public void testToLinearByRowUpperTriangle() {
         ZeroSteps4 zeroSteps4 = new ZeroSteps4();
         int[][] matrix = {{1, 12, 3}, {4, 26, 17}, {7, 8, 49},};
-        int[] result = {1, 12,3, 26, 17, 49 };
+        int[] result = {1, 12, 3, 26, 17, 49 };
         int[] scan = zeroSteps4.toLinearByRowUpperTriangle(matrix);
         assertArrayEquals(result, scan);
     }
